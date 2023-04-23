@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+entity Bibliotech
+Bibliotech : nombre
+entity Socio
+Socio : nombre
+Socio : numero de socio
+Socio : lista de libros
+entity Libro
+Libro : titulo
+Libro : autor
+Libro : categoria
+Bibliotech"1" ----> "0..* "Socio : posee
+Socio"1..*" ----> "0..* "Libro: alquila
+
+
+
+skin rose
+
+' TODO: Add the domain model
+
+@enduml

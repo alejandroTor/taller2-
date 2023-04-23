@@ -1,0 +1,68 @@
+@startuml
+left to right direction
+class Bibliotech {
+-nombre: String
++iniciarSesion(): boolean
++realizarPrestamo (): void
++salir(): void
+}
+class Socio {
+-nombre: String
+-numeroSocio: Int
+-cantLibros: Int
+-contraseña: String
+-Email: String
++Socio (nombre, numeroSocio, cantLibros)
++getNombre (): String
++getNumeroSocio (): Int
++getCantLibros (): Int
++getContraseña (): String
++getEmail (): String
++setContrasenia (contrasenia: Contrasenia): void
++setEmail (email: Email): void
+}
+class ListaSocios {
+-arreglo: Socio[]
+-cantidadSocios: Int
+-capacidadMaxima: Int
++ListaSocios (capacidadMaxima: Int)
++buscar(numeroSocio: Int) Int
++obtener(posicion: Int): Socio
++agregar(socio: Socio)
++eliminar(numeroSocio: Int): boolean
++getCantidadSocios(): Int
++getCapacidadMaxima(): Int
+}
+class Libro {
+-titulo: String
+-autor: String
+-categoria: String
+-ISBN: Int
++Libro (titulo, autor, categoria, isbn)
++getTitulo (): String
++getAutor (): String
++getCategoria (): String
++getIsbn (): Int
+
+}
+class ListaLibros {
+-arreglo: Libros []
+-cantidadLibros: Int
+-capacidadMaxima: Int
++ListaLibros (capacidadMaxima: Int)
++buscar(ISBN: Int) Int
++obtener(posicion: Int): Libro
++agregar(libro:Libro)
++eliminar((ISBN: Int) boolean
++getCantLibros(): Int
++getCapacidadMaxima(): Int
+}
+Socio" " o-->"0..* "ListaSocios :contiene
+Libro" " o-->"0..* "ListaLibros :contiene
+Bibliotech ---> Libro
+Bibliotech ---> Socio
+skin rose
+
+' TODO: Add the class model
+
+@enduml
